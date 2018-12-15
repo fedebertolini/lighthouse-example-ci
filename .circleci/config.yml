@@ -23,5 +23,5 @@ jobs:
       - image: circleci/node:10-browsers
     steps:
       - checkout
-      - run: npm i -g lighthouse-graphite@0.0.5 --no-progress
+      - run: sudo npm i -g lighthouse-graphite@0.0.5 --no-progress
       - run: lighthouse-graphite "$URL" --runs=7 --graphite-host="$GRAPHITE_HOST" --graphite-prefix="$GRAPHITE_PREFIX" --function-blacklist=min,max,mean --metrics-blacklist=dom-size,pwa-score,accessibility-score,best-practices-score,seo-score,total-time
